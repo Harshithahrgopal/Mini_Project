@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Login from "./Login";
-import Register from "./Register";
-import AdminDashboard from "./Dashboard";
-import VerifierDashboard from "./VerifierDashboard";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import AdminDashboard from "./pages/Dashboard";
+import VerifierDashboard from "./pages/VerifierDashboard";
 
 export default function App() {
   const [screen, setScreen] = useState("login");
