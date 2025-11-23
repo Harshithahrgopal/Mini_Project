@@ -6,7 +6,9 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   phone: String,
   password: String,
-  role: String, 
+  role: String, // admin, voter, verifier
+  wardId: { type: mongoose.Schema.Types.ObjectId, ref: "Ward" },
+  hasVoted: { type: Boolean, default: false }
 });
 
 module.exports = mongoose.model("User", userSchema);
