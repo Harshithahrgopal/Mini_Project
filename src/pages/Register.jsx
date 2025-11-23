@@ -14,34 +14,18 @@ export default function Register({ onSwitch }) {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // UPDATED FUNCTION (connected to MongoDB backend)
-  const handleRegister = async (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-
-    const response = await fetch("http://localhost:5000/api/auth/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...form,
-        role: "voter",
-      }),
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-      alert("Registered Successfully ✔");
-      onSwitch();
-    } else {
-      alert("Error: " + data.error);
-    }
+    alert("Admin Registered Successfully ✔");
+    onSwitch();
   };
 
   return (
     <div className="auth-wrapper">
+
       {/* LEFT IMAGE */}
       <div className="auth-left">
-        <img
+        <img 
           src="/background-login.jpg"
           className="left-img"
           alt="register-visual"
@@ -64,7 +48,7 @@ export default function Register({ onSwitch }) {
           </form>
 
           <p className="link" onClick={onSwitch}>
-            Not a Voter? <span>Login as Admin / Verifier</span>
+            Already have an account? <span>Login as Verifier </span>
           </p>
         </div>
       </div>
