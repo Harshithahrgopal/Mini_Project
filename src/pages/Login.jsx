@@ -10,57 +10,39 @@ export default function Login({ onSwitch, onLoginSuccess }) {
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [message, setMessage] = useState("");
 
-  // UPDATED LOGIN FUNCTION (calls backend)
-  const handleLoginSubmit = async (e) => {
+  const handleLoginSubmit = (e) => {
     e.preventDefault();
 
     if (!role) {
-      setMessage("⚠ Select a role first");
-      return;
-     }
-
-    const response = await fetch("http://localhost:5000/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username,
-        password,
-        role,
-      }),
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      setMessage("❌ " + data.error);
+      setMessage("⚠ Please select a role first");
       return;
     }
 
-    setShowOtpPopup(true);
-    setMessage("");
+    if (role === "admin" && username === "admin@gmail.com" && password === "admin123") {
+      setShowOtpPopup(true);
+      setMessage("");
+    } else if (role === "verifier" && username === "verifier@gmail.com" && password === "verify123") {
+      setShowOtpPopup(true);
+      setMessage("");
+    } else {
+      setMessage("❌ Invalid Username / Password / Role");
+    }
   };
 
-  // UPDATED OTP VERIFICATION
-  const handleVerifyOtp = async (e) => {
+  const handleVerifyOtp = (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:5000/api/auth/verify-otp", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ otp }),
-    });
+    if (otp === "123456") {
+      setShowOtpPopup(false);
+      setShowSuccessPopup(true);
+      setMessage("");
 
-    const data = await response.json();
-
-    if (!data.success) {
-      setMessage("❌ Incorrect OTP");
-      return;
+      setTimeout(() => {
+        onLoginSuccess(role);
+      }, 2000);
+    } else {
+      setMessage("❌ Incorrect OTP, try again");
     }
-
-    setShowOtpPopup(false);
-    setShowSuccessPopup(true);
-
-    setTimeout(() => onLoginSuccess(role), 2000);
   };
 
   const handleResend = () => {
@@ -69,10 +51,11 @@ export default function Login({ onSwitch, onLoginSuccess }) {
 
   return (
     <div className="auth-wrapper">
+      
       {/* LEFT IMAGE SECTION */}
       <div className="auth-left">
-        <img
-          src="/background-login.jpg"
+        <img 
+          src="/background-login.jpg" 
           className="left-img"
           alt="login-visual"
         />
@@ -81,6 +64,7 @@ export default function Login({ onSwitch, onLoginSuccess }) {
       {/* RIGHT FORM SECTION */}
       <div className="auth-right">
         <div className="auth-card">
+
           <h2 className="title">Login</h2>
 
           <div className="role-btn-container">
@@ -124,7 +108,7 @@ export default function Login({ onSwitch, onLoginSuccess }) {
           {!showOtpPopup && message && <p className="msg">{message}</p>}
 
           <p className="link" onClick={onSwitch}>
-            Click here to Register as a Voter
+            Click here to Register as a Verifier
           </p>
 
           {/* OTP POPUP */}
@@ -132,13 +116,15 @@ export default function Login({ onSwitch, onLoginSuccess }) {
             <div className="popup-overlay">
               <div className="popup-card">
                 <h3>Enter OTP</h3>
-                <p className="small-text">OTP has been sent</p>
+                <p className="small-text">
+                  OTP has been sent to your registered mobile number
+                </p>
 
                 <form onSubmit={handleVerifyOtp} className="popup-form">
                   <input
                     type="text"
                     maxLength="6"
-                    placeholder="Enter OTP"
+                    placeholder="Enter 6-digit OTP"
                     className="input"
                     value={otp}
                     onChange={(e) => setOtp(e.target.value)}
