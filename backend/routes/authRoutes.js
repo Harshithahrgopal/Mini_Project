@@ -12,19 +12,35 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// LOGIN API (no OTP logic here)
+// LOGIN API (fixed login logic)
 router.post("/login", async (req, res) => {
   const { username, password, role } = req.body;
 
-  const user = await User.findOne({
-    $or: [{ email: username }, { phone: username }],
-    password,
-    role,
-  });
+  try {
+    // First find user using email or phone
+    const user = await User.findOne({
+      $or: [{ email: username }, { phone: username }],
+    });
 
-  if (!user) return res.status(401).json({ error: "Invalid credentials" });
+    if (!user) {
+      return res.status(401).json({ error: "User not found" });
+    }
 
-  res.json({ msg: "Login OK", user });
+    // Check password separately
+    if (user.password !== password) {
+      return res.status(401).json({ error: "Invalid password" });
+    }
+
+    // Check role separately
+    if (user.role !== role) {
+      return res.status(401).json({ error: "Invalid role" });
+    }
+
+    // Success
+    res.json({ msg: "Login OK", user });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 module.exports = router;
