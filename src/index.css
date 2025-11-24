@@ -870,14 +870,14 @@ textarea.field-input {
 .dashboard-layout {
   display: flex;
   min-height: 100vh;
-  background: #e8f0fe;
+  background: 3px solid #38bdf8;
 }
 
 /* --- Fixed Left Sidebar --- */
 .sidebar {
   width: 250px;
-  background: linear-gradient(180deg, #00307a, #004aad);
-  color: white;
+  background: 3px solid #38bdf8 ;
+  color: 3px solid #38bdf8;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -937,7 +937,7 @@ textarea.field-input {
 
 /* ===== TOP NAVBAR ===== */
 .top-navbar {
-  background: #004aad;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -1006,7 +1006,7 @@ textarea.field-input {
   transform: translateY(-6px);
 }
 
-.blue { background:#0062FF; }
+.blue { background:linear-gradient(135deg, #38bdf8, #0ea5e9); }
 .green { background:#17A44A; }
 .yellow { background:#FFB200; color:#5a4200; }
 
@@ -1032,7 +1032,7 @@ textarea.field-input {
 }
 
 .add-btn {
-  background: #004aad;
+  background:linear-gradient(135deg, #38bdf8, #0ea5e9);
   color: white;
   border: none;
   padding: 12px 18px;
@@ -1043,3 +1043,58 @@ textarea.field-input {
 .add-btn:hover {
   background:#002b7f;
 }
+.sidebar-box {
+  background: #ffffff;
+  border: 1px solid #38bdf8;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-item {
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #38bdf8;
+  color: #0f172a;
+  font-weight: 600;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #e0f7ff;
+  transform: translateX(8px);
+  border-color: #0c4a6e;
+}
+
+.menu-item.active {
+  background: #38bdf8;
+  color: white !important;
+  border-color: #0c4a6e;
+  transform: scale(1.03);
+}
+
+.content-section {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  border: 2.5px solid #38bdf8;
+  transition: 0.3s;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.content-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+.fade { animation: fadeIn .4s ease; }
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
