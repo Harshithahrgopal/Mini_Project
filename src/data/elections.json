@@ -1,0 +1,9 @@
+[
+  {
+    "_id": { "$oid": "692327b97d44a77ad49ddbb1" },
+    "election_name": "Bengaluru Urban Municipal Election 2025",
+    "start_time": "2025-12-10T08:00:00",
+    "end_time": "2025-12-10T18:00:00",
+    "status": "upcoming"
+  }
+]

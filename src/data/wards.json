@@ -1,0 +1,26 @@
+[
+  {
+    "_id": { "$oid": "6923220a7d44a77ad49dd817" },
+    "ward_number": { "$numberInt": "151" },
+    "ward_name": "Koramangala",
+    "district": "Bengaluru Urban",
+    "population": { "$numberInt": "10" },
+    "verifier": "Gokul Verifier"
+  },
+  {
+    "_id": { "$oid": "692322207d44a77ad49dd81e" },
+    "ward_number": { "$numberInt": "84" },
+    "ward_name": "Whitefield",
+    "district": "Bengaluru Urban",
+    "population": { "$numberInt": "10" },
+    "verifier": "Ravi Verifier"
+  },
+  {
+    "_id": { "$oid": "692322357d44a77ad49dd823" },
+    "ward_number": { "$numberInt": "23" },
+    "ward_name": "Hebbal",
+    "district": "Bengaluru Urban",
+    "population": { "$numberInt": "10" },
+    "verifier": "Praveen Verifier"
+  }
+]

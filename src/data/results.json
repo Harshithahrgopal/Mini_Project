@@ -1,0 +1,53 @@
+{
+  "151": [
+    {
+      "candidate_full_name": "Arun Candidate",
+      "party": "BJP",
+      "votes": 4
+    },
+    {
+      "candidate_full_name": "Rohit Candidate",
+      "party": "Congress",
+      "votes": 3
+    },
+    {
+      "candidate_full_name": "Vikram Candidate",
+      "party": "AAP",
+      "votes": 3
+    }
+  ],
+  "84": [
+    {
+      "candidate_full_name": "Sanjay Candidate",
+      "party": "JD(S)",
+      "votes": 3
+    },
+    {
+      "candidate_full_name": "Naveen Candidate",
+      "party": "BJP",
+      "votes": 3
+    },
+    {
+      "candidate_full_name": "Kiran Candidate",
+      "party": "Congress",
+      "votes": 4
+    }
+  ],
+  "23": [
+    {
+      "candidate_full_name": "Deepak Candidate",
+      "party": "AAP",
+      "votes": 4
+    },
+    {
+      "candidate_full_name": "Harish Candidate",
+      "party": "Congress",
+      "votes": 3
+    },
+    {
+      "candidate_full_name": "Suresh Candidate",
+      "party": "BJP",
+      "votes": 3
+    }
+  ]
+}

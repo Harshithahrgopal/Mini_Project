@@ -1,0 +1,250 @@
+[
+  {
+    "_id": "692325cd7d44a77ad49ddafb",
+    "full_name": "Aarav Voter",
+    "aadhar_number": "123456789012",
+    "voter_id": "IUO10234",
+    "ward_number": 151,
+    "phone_number": "9876500011"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddafc",
+    "full_name": "Diya Voter",
+    "aadhar_number": "223456789012",
+    "voter_id": "IUO28471",
+    "ward_number": 151,
+    "phone_number": "9876500012"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddafd",
+    "full_name": "Rohan Voter",
+    "aadhar_number": "323456789012",
+    "voter_id": "IUO38192",
+    "ward_number": 151,
+    "phone_number": "9876500013"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddafe",
+    "full_name": "Saanvi Voter",
+    "aadhar_number": "423456789012",
+    "voter_id": "IUO47825",
+    "ward_number": 151,
+    "phone_number": "9876500014"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddaff",
+    "full_name": "Vivaan Voter",
+    "aadhar_number": "523456789012",
+    "voter_id": "IUO59320",
+    "ward_number": 151,
+    "phone_number": "9876500015"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb00",
+    "full_name": "Ishita Voter",
+    "aadhar_number": "623456789012",
+    "voter_id": "IUO64281",
+    "ward_number": 151,
+    "phone_number": "9876500016"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb01",
+    "full_name": "Kabir Voter",
+    "aadhar_number": "723456789012",
+    "voter_id": "IUO75914",
+    "ward_number": 151,
+    "phone_number": "9876500017"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb02",
+    "full_name": "Meera Voter",
+    "aadhar_number": "823456789012",
+    "voter_id": "IUO86145",
+    "ward_number": 151,
+    "phone_number": "9876500018"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb03",
+    "full_name": "Arjun Voter",
+    "aadhar_number": "923456789012",
+    "voter_id": "IUO97456",
+    "ward_number": 151,
+    "phone_number": "9876500019"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb04",
+    "full_name": "Nisha Voter",
+    "aadhar_number": "103456789012",
+    "voter_id": "IUO10562",
+    "ward_number": 151,
+    "phone_number": "9876500020"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb05",
+    "full_name": "Rithvik Voter",
+    "aadhar_number": "113456789012",
+    "voter_id": "IUO11234",
+    "ward_number": 84,
+    "phone_number": "9876500021"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb06",
+    "full_name": "Kavya Voter",
+    "aadhar_number": "123456789013",
+    "voter_id": "IUO28490",
+    "ward_number": 84,
+    "phone_number": "9876500022"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb07",
+    "full_name": "Harshit Voter",
+    "aadhar_number": "133456789012",
+    "voter_id": "IUO35912",
+    "ward_number": 84,
+    "phone_number": "9876500023"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb08",
+    "full_name": "Ananya Voter",
+    "aadhar_number": "143456789012",
+    "voter_id": "IUO45289",
+    "ward_number": 84,
+    "phone_number": "9876500024"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb09",
+    "full_name": "Krishna Voter",
+    "aadhar_number": "153456789012",
+    "voter_id": "IUO53427",
+    "ward_number": 84,
+    "phone_number": "9876500025"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb0a",
+    "full_name": "Tanya Voter",
+    "aadhar_number": "163456789012",
+    "voter_id": "IUO68914",
+    "ward_number": 84,
+    "phone_number": "9876500026"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb0b",
+    "full_name": "Dev Voter",
+    "aadhar_number": "173456789012",
+    "voter_id": "IUO74820",
+    "ward_number": 84,
+    "phone_number": "9876500027"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb0c",
+    "full_name": "Rhea Voter",
+    "aadhar_number": "183456789012",
+    "voter_id": "IUO80216",
+    "ward_number": 84,
+    "phone_number": "9876500028"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb0d",
+    "full_name": "Yash Voter",
+    "aadhar_number": "193456789012",
+    "voter_id": "IUO91562",
+    "ward_number": 84,
+    "phone_number": "9876500029"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb0e",
+    "full_name": "Tejas Voter",
+    "aadhar_number": "203456789012",
+    "voter_id": "IUO99813",
+    "ward_number": 84,
+    "phone_number": "9876500030"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb0f",
+    "full_name": "Aryan Voter",
+    "aadhar_number": "213456789012",
+    "voter_id": "IUO11267",
+    "ward_number": 23,
+    "phone_number": "9876500031"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb10",
+    "full_name": "Pooja Voter",
+    "aadhar_number": "223456789013",
+    "voter_id": "IUO28561",
+    "ward_number": 23,
+    "phone_number": "9876500032"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb11",
+    "full_name": "Sudarshan Voter",
+    "aadhar_number": "233456789012",
+    "voter_id": "IUO36489",
+    "ward_number": 23,
+    "phone_number": "9876500033"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb12",
+    "full_name": "Varsha Voter",
+    "aadhar_number": "243456789012",
+    "voter_id": "IUO48915",
+    "ward_number": 23,
+    "phone_number": "9876500034"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb13",
+    "full_name": "Imran Voter",
+    "aadhar_number": "253456789012",
+    "voter_id": "IUO51792",
+    "ward_number": 23,
+    "phone_number": "9876500035"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb14",
+    "full_name": "Shreya Voter",
+    "aadhar_number": "263456789012",
+    "voter_id": "IUO62147",
+    "ward_number": 23,
+    "phone_number": "9876500036"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb15",
+    "full_name": "Naveen Voter",
+    "aadhar_number": "273456789012",
+    "voter_id": "IUO79315",
+    "ward_number": 23,
+    "phone_number": "9876500037"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb16",
+    "full_name": "Rashmi Voter",
+    "aadhar_number": "283456789012",
+    "voter_id": "IUO86421",
+    "ward_number": 23,
+    "phone_number": "9876500038"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb17",
+    "full_name": "Vikram Voter",
+    "aadhar_number": "293456789012",
+    "voter_id": "IUO91544",
+    "ward_number": 23,
+    "phone_number": "9876500039"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb18",
+    "full_name": "Geetha Voter",
+    "aadhar_number": "303456789012",
+    "voter_id": "IUO98761",
+    "ward_number": 23,
+    "phone_number": "9876500040"
+  },
+  {
+    "_id": "692325cd7d44a77ad49ddb19",
+    "full_name": "Hitha Voter",
+    "aadhar_number": "929308890246",
+    "voter_id": "IUO98777",
+    "ward_number": 23,
+    "phone_number": "9876500441"
+  }
+]

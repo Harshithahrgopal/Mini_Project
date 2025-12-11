@@ -1,0 +1,7 @@
+[
+  {
+    "_id": { "$oid": "692326657d44a77ad49ddb38" },
+    "district_name": "Bengaluru Urban",
+    "number_of_wards": { "$numberInt": "3" }
+  }
+]

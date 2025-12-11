@@ -1,0 +1,83 @@
+[
+  {
+    "_id": { "$oid": "692323127d44a77ad49dd8ab" },
+    "full_name": "Arun Candidate",
+    "party": "BJP",
+    "ward_number": 151,
+    "phone_number": "9876501122",
+    "address": "Koramangala 4th Block, Bengaluru",
+    "aadhar_number": "451278963210"
+  },
+  {
+    "_id": { "$oid": "692323127d44a77ad49dd8ac" },
+    "full_name": "Rohit Candidate",
+    "party": "Congress",
+    "ward_number": 151,
+    "phone_number": "9845032189",
+    "address": "Koramangala 6th Block, Bengaluru",
+    "aadhar_number": "451278963211"
+  },
+  {
+    "_id": { "$oid": "692323127d44a77ad49dd8ad" },
+    "full_name": "Vikram Candidate",
+    "party": "AAP",
+    "ward_number": 151,
+    "phone_number": "9812345674",
+    "address": "Koramangala 8th Block, Bengaluru",
+    "aadhar_number": "451278963212"
+  },
+  {
+    "_id": { "$oid": "692323127d44a77ad49dd8ae" },
+    "full_name": "Sanjay Candidate",
+    "party": "JD(S)",
+    "ward_number": 84,
+    "phone_number": "9023456712",
+    "address": "Whitefield Main Road, Bengaluru",
+    "aadhar_number": "451278963213"
+  },
+  {
+    "_id": { "$oid": "692323127d44a77ad49dd8af" },
+    "full_name": "Naveen Candidate",
+    "party": "BJP",
+    "ward_number": 84,
+    "phone_number": "9098765432",
+    "address": "Whitefield Station Road, Bengaluru",
+    "aadhar_number": "451278963214"
+  },
+  {
+    "_id": { "$oid": "692323127d44a77ad49dd8b0" },
+    "full_name": "Kiran Candidate",
+    "party": "Congress",
+    "ward_number": 84,
+    "phone_number": "9012345678",
+    "address": "Whitefield Ashram Road, Bengaluru",
+    "aadhar_number": "451278963215"
+  },
+  {
+    "_id": { "$oid": "692323127d44a77ad49dd8b1" },
+    "full_name": "Deepak Candidate",
+    "party": "AAP",
+    "ward_number": 23,
+    "phone_number": "9123456701",
+    "address": "Hebbal Kempapura, Bengaluru",
+    "aadhar_number": "451278963216"
+  },
+  {
+    "_id": { "$oid": "692323127d44a77ad49dd8b2" },
+    "full_name": "Harish Candidate",
+    "party": "Congress",
+    "ward_number": 23,
+    "phone_number": "9345678123",
+    "address": "Hebbal Ring Road, Bengaluru",
+    "aadhar_number": "451278963217"
+  },
+  {
+    "_id": { "$oid": "692323127d44a77ad49dd8b3" },
+    "full_name": "Suresh Candidate",
+    "party": "BJP",
+    "ward_number": 23,
+    "phone_number": "9456123789",
+    "address": "Hebbal Lake View Road, Bengaluru",
+    "aadhar_number": "451278963218"
+  }
+]

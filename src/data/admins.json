@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "69231c1a7d44a77ad49dd6e4",
+    "fullname": "Nikhil Admin",
+    "aadhar": "923467589254",
+    "email": "nikhil.admin@gmail.com",
+    "phone": "9876543210",
+    "password": "Nikhil123",
+    "role": "admin"
+  },
+  {
+    "_id": "69231c557d44a77ad49dd706",
+    "fullname": "Anitha Admin",
+    "aadhar": "123434568234",
+    "email": "anitha.admin@gmail.com",
+    "phone": "8789649677",
+    "password": "Anitha123",
+    "role": "admin"
+  }
+]

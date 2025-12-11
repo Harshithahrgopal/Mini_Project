@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #e8f0fe;
+}
+
+:root {
+  --sky-blue: #38bdf8;          /* Main sky blue */
+  --sky-blue-dark: #0ea5e9;     /* Hover blue */
+  --sky-blue-light: #e0f6ff;    /* Light background blue */
+
+  --text-dark: #1e293b;         /* Clean dark text */
+  --text-soft: #475569;         /* Gray text */
+
+  --border-light: #dbeafe;      /* Light border */
+  --bg-light: #f4f9ff;          /* Page background */
+}
