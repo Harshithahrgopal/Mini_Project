@@ -16,27 +16,23 @@ export default function Login({ onSwitch, onLoginSuccess }) {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // -------- Timer State --------
+  // Timer state
   const [timer, setTimer] = useState(60);
   const [isTimerActive, setIsTimerActive] = useState(false);
 
-  // -------- Generate a 6-digit OTP --------
+  // Generate 6-digit OTP
   const createOtp = () => {
     return Math.floor(100000 + Math.random() * 900000).toString();
   };
 
-  // -------- Countdown Timer Logic --------
+  // Countdown timer logic
   useEffect(() => {
     let interval = null;
-
     if (isTimerActive && timer > 0) {
-      interval = setInterval(() => {
-        setTimer((prev) => prev - 1);
-      }, 1000);
+      interval = setInterval(() => setTimer((prev) => prev - 1), 1000);
     } else if (timer === 0) {
       setIsTimerActive(false);
     }
-
     return () => clearInterval(interval);
   }, [isTimerActive, timer]);
 
@@ -73,16 +69,13 @@ export default function Login({ onSwitch, onLoginSuccess }) {
 
     const newOtp = createOtp();
     setGeneratedOtp(newOtp);
-
     setUserData(user);
     setShowOtpPopup(true);
     setLoading(false);
-
-    setMessage(`📩 Your OTP: ${newOtp}`);
-
     startOtpTimer();
   };
 
+  // OTP verification
   const handleVerifyOtp = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -97,20 +90,30 @@ export default function Login({ onSwitch, onLoginSuccess }) {
         setShowSuccessPopup(false);
       }, 2000);
     } else {
-      setMessage("❌ Invalid OTP");
+      setOtp("");
+      // Close OTP popup and show error in main card
+      setShowOtpPopup(false);
+      setMessage("❌ Invalid OTP. Please try again.");
     }
 
     setLoading(false);
   };
 
+  // Resend OTP
   const handleResend = () => {
-    if (timer > 0) return; // prevent click before time
-
+    if (timer > 0) return; // prevent click before timer ends
     const newOtp = createOtp();
     setGeneratedOtp(newOtp);
-    setMessage(`🔁 OTP Resent Successfully: ${newOtp}`);
-
+    setMessage(`🔁 OTP Resent Successfully`);
     startOtpTimer();
+  };
+
+  // Mask phone number (show only last 3 digits)
+  const maskPhone = (phone) => {
+    if (!phone) return "";
+    const len = phone.length;
+    if (len <= 3) return phone;
+    return "*".repeat(len - 3) + phone.slice(len - 3);
   };
 
   return (
@@ -176,10 +179,18 @@ export default function Login({ onSwitch, onLoginSuccess }) {
             Click here to Register as a Voter
           </p>
 
-          {showOtpPopup && (
+          {/* OTP Popup */}
+          {showOtpPopup && userData && (
             <div className="popup-overlay">
               <div className="popup-card">
-                <h3>Enter OTP</h3>
+                <h3>🔐 OTP Verification</h3>
+
+                <p className="small-text">
+                  📩 OTP for {userData.fullname} <br />
+                  Mobile: +91 {maskPhone(userData.phone)} <br />
+                  Timer: {timer} sec
+                   OTP: {generatedOtp}
+                </p>
 
                 <form onSubmit={handleVerifyOtp} className="popup-form">
                   <input
@@ -208,20 +219,25 @@ export default function Login({ onSwitch, onLoginSuccess }) {
                     onClick={handleResend}
                     disabled={timer > 0}
                   >
-                    {timer > 0
-                      ? `Resend in ${timer}s`
-                      : "Resend OTP"}
+                    {timer > 0 ? `Resend in ${timer}s` : "Resend OTP"}
                   </button>
                 </form>
 
                 {/* Show OTP for testing */}
-                <p style={{ marginTop: "10px", fontSize: "14px", color: "#38bdf8" }}>
-                  OTP: {generatedOtp}
+                <p
+                  style={{
+                    marginTop: "10px",
+                    fontSize: "14px",
+                    color: "#38bdf8",
+                  }}
+                >
+                 
                 </p>
               </div>
             </div>
           )}
 
+          {/* Success Popup */}
           {showSuccessPopup && (
             <div className="popup-overlay">
               <div className="popup-card">
