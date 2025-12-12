@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/auth.css";
 
 import admins from "../data/admins";
@@ -9,11 +9,41 @@ export default function Login({ onSwitch, onLoginSuccess }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [otp, setOtp] = useState("");
+  const [generatedOtp, setGeneratedOtp] = useState("");
   const [showOtpPopup, setShowOtpPopup] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [message, setMessage] = useState("");
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  // -------- Timer State --------
+  const [timer, setTimer] = useState(60);
+  const [isTimerActive, setIsTimerActive] = useState(false);
+
+  // -------- Generate a 6-digit OTP --------
+  const createOtp = () => {
+    return Math.floor(100000 + Math.random() * 900000).toString();
+  };
+
+  // -------- Countdown Timer Logic --------
+  useEffect(() => {
+    let interval = null;
+
+    if (isTimerActive && timer > 0) {
+      interval = setInterval(() => {
+        setTimer((prev) => prev - 1);
+      }, 1000);
+    } else if (timer === 0) {
+      setIsTimerActive(false);
+    }
+
+    return () => clearInterval(interval);
+  }, [isTimerActive, timer]);
+
+  const startOtpTimer = () => {
+    setTimer(60);
+    setIsTimerActive(true);
+  };
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
@@ -41,16 +71,23 @@ export default function Login({ onSwitch, onLoginSuccess }) {
       return;
     }
 
+    const newOtp = createOtp();
+    setGeneratedOtp(newOtp);
+
     setUserData(user);
     setShowOtpPopup(true);
     setLoading(false);
+
+    setMessage(`📩 Your OTP: ${newOtp}`);
+
+    startOtpTimer();
   };
 
   const handleVerifyOtp = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    if (otp === "123456") {
+    if (otp === generatedOtp) {
       setShowOtpPopup(false);
       setShowSuccessPopup(true);
       setMessage("");
@@ -62,11 +99,18 @@ export default function Login({ onSwitch, onLoginSuccess }) {
     } else {
       setMessage("❌ Invalid OTP");
     }
+
     setLoading(false);
   };
 
   const handleResend = () => {
-    setMessage("🔁 OTP Resent Successfully");
+    if (timer > 0) return; // prevent click before time
+
+    const newOtp = createOtp();
+    setGeneratedOtp(newOtp);
+    setMessage(`🔁 OTP Resent Successfully: ${newOtp}`);
+
+    startOtpTimer();
   };
 
   return (
@@ -158,12 +202,22 @@ export default function Login({ onSwitch, onLoginSuccess }) {
 
                   <button
                     type="button"
-                    className="btn-secondary"
+                    className={`btn-secondary ${
+                      timer > 0 ? "disabled-btn" : ""
+                    }`}
                     onClick={handleResend}
+                    disabled={timer > 0}
                   >
-                    Resend OTP
+                    {timer > 0
+                      ? `Resend in ${timer}s`
+                      : "Resend OTP"}
                   </button>
                 </form>
+
+                {/* Show OTP for testing */}
+                <p style={{ marginTop: "10px", fontSize: "14px", color: "#38bdf8" }}>
+                  OTP: {generatedOtp}
+                </p>
               </div>
             </div>
           )}
