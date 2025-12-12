@@ -106,6 +106,8 @@ export default function VerifierDashboard() {
         setMoveToGuidelines(true);
       }, 2000);
     } else {
+      setOtp("");
+      setShowOtpPopup(false);
       setMessage("❌ Wrong OTP, try again");
     }
   };
@@ -205,26 +207,7 @@ export default function VerifierDashboard() {
 
           {message && <p className="msg">{message}</p>}
 
-          {verifiedVoter && (
-            <div style={{ marginTop: "20px", color: "#0f5132", fontWeight: "700", textAlign: "left" }}>
-              <p>
-                <strong>Logged in voter:</strong> {verifiedVoter.full_name} (Ward {verifiedVoter.ward_number})
-              </p>
-
-              <h3>Candidates in Your Ward</h3>
-              {wardCandidates.length > 0 ? (
-                <ul style={{ paddingLeft: "20px" }}>
-                  {wardCandidates.map((c) => (
-                    <li key={c._id?.$oid || c._id}>
-                      {c.full_name} — {c.party}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No candidates found for your ward.</p>
-              )}
-            </div>
-          )}
+          
         </div>
       </div>
 
@@ -238,9 +221,11 @@ export default function VerifierDashboard() {
           <div className="popup-card">
             <h3>🔐 OTP Verification</h3>
             <p className="small-text">
-              📩 OTP for {verifiedVoter.full_name} (Mobile: +91 {verifiedVoter.phone_number}) is {generatedOtp} <br/>
-              Timer: {otpTimer} sec
-            </p>
+  📩 OTP for {verifiedVoter.full_name} <br/>
+  Mobile: +91 {verifiedVoter.phone_number} <br/>
+  OTP: {generatedOtp} <br/>
+  Timer: {otpTimer} sec
+</p>
 
             <form onSubmit={handleVerifyOtp} className="popup-form">
               <input
